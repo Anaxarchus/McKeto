@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/SearchBar/SearchBar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Recipes.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/NewRecipe.tscn" type="PackedScene" id=4]
+
+[node name="Recipes" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Content" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Header" type="HBoxContainer" parent="Content"]
+margin_right = 1600.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="Left" type="HBoxContainer" parent="Content/Header"]
+margin_right = 530.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Back" type="Button" parent="Content/Header/Left"]
+margin_right = 100.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 0 )
+text = "Back"
+
+[node name="NewRecipe" type="Button" parent="Content/Header/Left"]
+margin_left = 104.0
+margin_right = 284.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 180, 0 )
+text = "New Recipe +"
+
+[node name="Center" type="HBoxContainer" parent="Content/Header"]
+margin_left = 534.0
+margin_right = 1065.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Right" type="HBoxContainer" parent="Content/Header"]
+margin_left = 1069.0
+margin_right = 1600.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+
+[node name="SearchBar" parent="Content/Header/Right" instance=ExtResource( 1 )]
+margin_right = 531.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="ScrollBody" type="ScrollContainer" parent="Content"]
+margin_top = 44.0
+margin_right = 1600.0
+margin_bottom = 800.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RecipeContainer" type="GridContainer" parent="Content/ScrollBody"]
+margin_right = 1600.0
+margin_bottom = 756.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="New" type="Popup" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = 64.0
+margin_right = -64.0
+margin_bottom = -64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewRecipe" parent="New" instance=ExtResource( 4 )]
+
+[connection signal="pressed" from="Content/Header/Left/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Content/Header/Left/NewRecipe" to="." method="_on_NewRecipe_pressed"]
+[connection signal="creation_canceled" from="New/NewRecipe" to="." method="_on_NewRecipe_creation_canceled"]
+[connection signal="recipe_created" from="New/NewRecipe" to="." method="_on_NewRecipe_recipe_created"]

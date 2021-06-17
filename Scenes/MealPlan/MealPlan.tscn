@@ -1,0 +1,452 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/MealPlan/MealPlan.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 20.0
+content_margin_right = 20.0
+content_margin_top = 20.0
+content_margin_bottom = 20.0
+bg_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+
+[node name="MealPlan" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Head" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1584.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="Back" type="Button" parent="VBoxContainer/Head"]
+margin_right = 100.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 0 )
+text = "Back"
+
+[node name="ShoppingList" type="Button" parent="VBoxContainer/Head"]
+margin_left = 104.0
+margin_right = 344.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 240, 0 )
+text = "Generate Shopping List"
+
+[node name="MealReport" type="Button" parent="VBoxContainer/Head"]
+margin_left = 348.0
+margin_right = 588.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 240, 0 )
+text = "Generate Meal Report"
+
+[node name="DaysScroll" type="ScrollContainer" parent="VBoxContainer"]
+margin_top = 44.0
+margin_right = 1584.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 0, 120 )
+scroll_vertical_enabled = false
+
+[node name="DaysContainer" type="HBoxContainer" parent="VBoxContainer/DaysScroll"]
+margin_right = 1584.0
+margin_bottom = 120.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Sunday" type="Button" parent="VBoxContainer/DaysScroll/DaysContainer"]
+margin_right = 222.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+text = "Sunday"
+
+[node name="Monday" type="Button" parent="VBoxContainer/DaysScroll/DaysContainer"]
+margin_left = 226.0
+margin_right = 449.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+text = "Monday"
+
+[node name="Tuesday" type="Button" parent="VBoxContainer/DaysScroll/DaysContainer"]
+margin_left = 453.0
+margin_right = 676.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+text = "Tuesday"
+
+[node name="Wednesday" type="Button" parent="VBoxContainer/DaysScroll/DaysContainer"]
+margin_left = 680.0
+margin_right = 903.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+text = "Wednesday"
+
+[node name="Thrusday" type="Button" parent="VBoxContainer/DaysScroll/DaysContainer"]
+margin_left = 907.0
+margin_right = 1130.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+text = "Thursday"
+
+[node name="Friday" type="Button" parent="VBoxContainer/DaysScroll/DaysContainer"]
+margin_left = 1134.0
+margin_right = 1357.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+text = "Friday"
+
+[node name="Saturday" type="Button" parent="VBoxContainer/DaysScroll/DaysContainer"]
+margin_left = 1361.0
+margin_right = 1584.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 3
+text = "Saturday"
+
+[node name="MealScroll" type="ScrollContainer" parent="VBoxContainer"]
+margin_top = 168.0
+margin_right = 1584.0
+margin_bottom = 784.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MealContainer" type="VBoxContainer" parent="VBoxContainer/MealScroll"]
+margin_right = 1584.0
+margin_bottom = 616.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="StatBar" type="HBoxContainer" parent="VBoxContainer/MealScroll/MealContainer"]
+margin_right = 1584.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 40 )
+
+[node name="Day" type="Label" parent="VBoxContainer/MealScroll/MealContainer/StatBar"]
+margin_right = 1380.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 300, 80 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Sunday"
+align = 1
+valign = 1
+
+[node name="PlanClear" type="Button" parent="VBoxContainer/MealScroll/MealContainer/StatBar"]
+margin_left = 1384.0
+margin_right = 1584.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 0 )
+text = "Clear Plan"
+
+[node name="FoodBody" type="HBoxContainer" parent="VBoxContainer/MealScroll/MealContainer"]
+margin_top = 84.0
+margin_right = 1584.0
+margin_bottom = 616.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="Meals" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody"]
+margin_right = 1042.0
+margin_bottom = 532.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 40
+
+[node name="Breakfast" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals"]
+margin_right = 1042.0
+margin_bottom = 46.0
+custom_constants/separation = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Breakfast"]
+margin_right = 1042.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Breakfast/HBoxContainer"]
+margin_right = 59.0
+margin_bottom = 14.0
+text = "Breakfast"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Breakfast/HBoxContainer"]
+margin_left = 63.0
+margin_right = 1042.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BreakfastItems" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Breakfast"]
+margin_top = 22.0
+margin_right = 1042.0
+margin_bottom = 46.0
+
+[node name="AddBreakfast" type="Button" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Breakfast/BreakfastItems"]
+margin_right = 1042.0
+margin_bottom = 20.0
+text = "Add Item"
+
+[node name="Items" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Breakfast/BreakfastItems"]
+margin_top = 24.0
+margin_right = 1042.0
+margin_bottom = 24.0
+custom_constants/separation = 20
+
+[node name="Lunch" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals"]
+margin_top = 86.0
+margin_right = 1042.0
+margin_bottom = 132.0
+custom_constants/separation = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Lunch"]
+margin_right = 1042.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Lunch/HBoxContainer"]
+margin_right = 38.0
+margin_bottom = 14.0
+text = "Lunch"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Lunch/HBoxContainer"]
+margin_left = 42.0
+margin_right = 1042.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LunchItems" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Lunch"]
+margin_top = 22.0
+margin_right = 1042.0
+margin_bottom = 46.0
+
+[node name="AddLunch" type="Button" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Lunch/LunchItems"]
+margin_right = 1042.0
+margin_bottom = 20.0
+text = "Add Item"
+
+[node name="Items" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Lunch/LunchItems"]
+margin_top = 24.0
+margin_right = 1042.0
+margin_bottom = 24.0
+custom_constants/separation = 20
+
+[node name="Dinner" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals"]
+margin_top = 172.0
+margin_right = 1042.0
+margin_bottom = 218.0
+custom_constants/separation = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Dinner"]
+margin_right = 1042.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Dinner/HBoxContainer"]
+margin_right = 43.0
+margin_bottom = 14.0
+text = "Dinner"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Dinner/HBoxContainer"]
+margin_left = 47.0
+margin_right = 1042.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="DinnerItems" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Dinner"]
+margin_top = 22.0
+margin_right = 1042.0
+margin_bottom = 46.0
+
+[node name="AddDinner" type="Button" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Dinner/DinnerItems"]
+margin_right = 1042.0
+margin_bottom = 20.0
+text = "Add Item"
+
+[node name="Items" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Dinner/DinnerItems"]
+margin_top = 24.0
+margin_right = 1042.0
+margin_bottom = 24.0
+custom_constants/separation = 20
+
+[node name="Snacks" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody"]
+margin_left = 1062.0
+margin_right = 1584.0
+margin_bottom = 532.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+custom_constants/separation = 40
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks"]
+margin_right = 522.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/HBoxContainer2"]
+margin_right = 93.0
+margin_bottom = 14.0
+text = "Daily Nutrition"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/HBoxContainer2"]
+margin_left = 97.0
+margin_right = 522.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Nutrition" type="GridContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks"]
+margin_top = 54.0
+margin_right = 522.0
+margin_bottom = 104.0
+columns = 2
+
+[node name="Calories" type="Label" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/Nutrition"]
+margin_right = 259.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+text = "Calories: 0"
+
+[node name="Fats" type="Label" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/Nutrition"]
+margin_left = 263.0
+margin_right = 522.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+text = "Fats: 0"
+
+[node name="Carbs" type="Label" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/Nutrition"]
+margin_top = 18.0
+margin_right = 259.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+text = "Carbs: 0"
+
+[node name="Protein" type="Label" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/Nutrition"]
+margin_left = 263.0
+margin_top = 18.0
+margin_right = 522.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+text = "Protein: 0"
+
+[node name="Fiber" type="Label" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/Nutrition"]
+margin_top = 36.0
+margin_right = 259.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+text = "Fiber: 0"
+
+[node name="Sugar" type="Label" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/Nutrition"]
+margin_left = 263.0
+margin_top = 36.0
+margin_right = 522.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+text = "Sugar: 0"
+
+[node name="SnackItems" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks"]
+margin_top = 144.0
+margin_right = 522.0
+margin_bottom = 218.0
+custom_constants/separation = 20
+
+[node name="DinnerItems2" type="HBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/SnackItems"]
+margin_right = 522.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/SnackItems/DinnerItems2"]
+margin_right = 43.0
+margin_bottom = 14.0
+text = "Snacks"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/SnackItems/DinnerItems2"]
+margin_left = 47.0
+margin_right = 522.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AddSnack" type="Button" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/SnackItems"]
+margin_top = 34.0
+margin_right = 522.0
+margin_bottom = 54.0
+text = "Add Item"
+
+[node name="Items" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/SnackItems"]
+margin_top = 74.0
+margin_right = 522.0
+margin_bottom = 74.0
+custom_constants/separation = 20
+
+[node name="Shopping" type="Popup" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 24.0
+margin_right = -32.0
+margin_bottom = -32.0
+
+[node name="Panel" type="Panel" parent="Shopping"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextEdit" type="TextEdit" parent="Shopping/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/read_only = SubResource( 1 )
+custom_colors/font_color_readonly = Color( 1, 1, 1, 1 )
+readonly = true
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShoppingCose" type="Button" parent="Shopping"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -80.0
+margin_top = -36.0
+rect_min_size = Vector2( 80, 36 )
+text = "Close"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/Head/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="VBoxContainer/Head/ShoppingList" to="." method="_on_ShoppingList_pressed"]
+[connection signal="pressed" from="VBoxContainer/Head/MealReport" to="." method="_on_MealReport_pressed"]
+[connection signal="pressed" from="VBoxContainer/DaysScroll/DaysContainer/Sunday" to="." method="_on_Sunday_pressed"]
+[connection signal="pressed" from="VBoxContainer/DaysScroll/DaysContainer/Monday" to="." method="_on_Monday_pressed"]
+[connection signal="pressed" from="VBoxContainer/DaysScroll/DaysContainer/Tuesday" to="." method="_on_Tuesday_pressed"]
+[connection signal="pressed" from="VBoxContainer/DaysScroll/DaysContainer/Wednesday" to="." method="_on_Wednesday_pressed"]
+[connection signal="pressed" from="VBoxContainer/DaysScroll/DaysContainer/Thrusday" to="." method="_on_Thrusday_pressed"]
+[connection signal="pressed" from="VBoxContainer/DaysScroll/DaysContainer/Friday" to="." method="_on_Friday_pressed"]
+[connection signal="pressed" from="VBoxContainer/DaysScroll/DaysContainer/Saturday" to="." method="_on_Saturday_pressed"]
+[connection signal="pressed" from="VBoxContainer/MealScroll/MealContainer/StatBar/PlanClear" to="." method="_on_PlanClear_pressed"]
+[connection signal="pressed" from="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Breakfast/BreakfastItems/AddBreakfast" to="." method="_on_AddBreakfast_pressed"]
+[connection signal="pressed" from="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Lunch/LunchItems/AddLunch" to="." method="_on_AddLunch_pressed"]
+[connection signal="pressed" from="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Dinner/DinnerItems/AddDinner" to="." method="_on_AddDinner_pressed"]
+[connection signal="pressed" from="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/SnackItems/AddSnack" to="." method="_on_AddSnack_pressed"]
+[connection signal="pressed" from="Shopping/ShoppingCose" to="." method="_on_ShoppingCose_pressed"]

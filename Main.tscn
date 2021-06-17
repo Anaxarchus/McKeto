@@ -1,0 +1,225 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://MainTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/Recipes.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/MealPlan/MealPlan.tscn" type="PackedScene" id=4]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.181133, 0.132, 0.4, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 360, 0 )
+custom_constants/separation = 0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line1" type="HBoxContainer" parent="Menu"]
+margin_top = 336.0
+margin_right = 1600.0
+margin_bottom = 368.0
+rect_min_size = Vector2( 0, 32 )
+alignment = 1
+
+[node name="Recipes" type="Button" parent="Menu/Line1"]
+margin_left = 620.0
+margin_right = 980.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 360, 0 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 0
+text = "Recipes"
+
+[node name="Line2" type="HBoxContainer" parent="Menu"]
+margin_top = 368.0
+margin_right = 1600.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 0, 32 )
+alignment = 1
+
+[node name="MyMenu" type="Button" parent="Menu/Line2"]
+margin_left = 620.0
+margin_right = 980.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 360, 0 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 0
+text = "Menu"
+
+[node name="Line3" type="HBoxContainer" parent="Menu"]
+margin_top = 400.0
+margin_right = 1600.0
+margin_bottom = 432.0
+rect_min_size = Vector2( 0, 32 )
+alignment = 1
+
+[node name="LogIn" type="Button" parent="Menu/Line3"]
+margin_left = 620.0
+margin_right = 980.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 360, 0 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 0
+text = "Log In"
+
+[node name="Line4" type="HBoxContainer" parent="Menu"]
+margin_top = 432.0
+margin_right = 1600.0
+margin_bottom = 464.0
+rect_min_size = Vector2( 0, 32 )
+alignment = 1
+
+[node name="Exit" type="Button" parent="Menu/Line4"]
+margin_left = 620.0
+margin_right = 980.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 360, 0 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 0
+text = "Exit"
+
+[node name="Recipes" parent="." instance=ExtResource( 2 )]
+visible = false
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+
+[node name="MealPlan" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="LogIn" type="Popup" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -520.0
+margin_top = -272.0
+margin_right = 520.0
+margin_bottom = 272.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="LogIn"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LogIn/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="LogIn/Panel/VBoxContainer"]
+margin_right = 1008.0
+margin_bottom = 30.0
+text = "No Profile Loaded. To save your meal plan please create a profile, or load an existing one."
+align = 1
+valign = 1
+
+[node name="ItemList" type="ItemList" parent="LogIn/Panel/VBoxContainer"]
+margin_top = 34.0
+margin_right = 1008.0
+margin_bottom = 464.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+items = [ "No Profiles Found", null, false ]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LogIn/Panel"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = -56.0
+margin_right = -16.0
+margin_bottom = -16.0
+rect_min_size = Vector2( 0, 40 )
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProfileEntry" type="HBoxContainer" parent="LogIn/Panel/HBoxContainer"]
+visible = false
+margin_right = 396.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="LogIn/Panel/HBoxContainer/ProfileEntry"]
+margin_top = 5.0
+margin_right = 128.0
+margin_bottom = 35.0
+text = "Profile Name:"
+
+[node name="LineEdit" type="LineEdit" parent="LogIn/Panel/HBoxContainer/ProfileEntry"]
+margin_left = 132.0
+margin_right = 396.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Create" type="Button" parent="LogIn/Panel/HBoxContainer"]
+margin_left = 400.0
+margin_right = 600.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 0 )
+text = "New"
+
+[node name="Guest" type="Button" parent="LogIn/Panel/HBoxContainer"]
+margin_left = 604.0
+margin_right = 804.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 0 )
+text = "Guest"
+
+[node name="Load" type="Button" parent="LogIn/Panel/HBoxContainer"]
+margin_left = 808.0
+margin_right = 1008.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 0 )
+disabled = true
+text = "Load"
+
+[connection signal="pressed" from="Menu/Line1/Recipes" to="." method="_on_Recipes_pressed"]
+[connection signal="pressed" from="Menu/Line2/MyMenu" to="." method="_on_MyMenu_pressed"]
+[connection signal="pressed" from="Menu/Line3/LogIn" to="." method="_on_LogIn_pressed"]
+[connection signal="pressed" from="Menu/Line4/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="back" from="Recipes" to="." method="_on_Recipes_back"]
+[connection signal="recipe_selected" from="Recipes" to="." method="_on_Recipes_recipe_selected"]
+[connection signal="back" from="MealPlan" to="." method="_on_MealPlan_back"]
+[connection signal="day_cleared" from="MealPlan" to="." method="_on_MealPlan_day_cleared"]
+[connection signal="select_recipe" from="MealPlan" to="." method="_on_MealPlan_select_recipe"]
+[connection signal="item_selected" from="LogIn/Panel/VBoxContainer/ItemList" to="." method="_on_ItemList_item_selected"]
+[connection signal="nothing_selected" from="LogIn/Panel/VBoxContainer/ItemList" to="." method="_on_ItemList_nothing_selected"]
+[connection signal="pressed" from="LogIn/Panel/HBoxContainer/Create" to="." method="_on_Create_pressed"]
+[connection signal="pressed" from="LogIn/Panel/HBoxContainer/Guest" to="." method="_on_Guest_pressed"]
+[connection signal="pressed" from="LogIn/Panel/HBoxContainer/Load" to="." method="_on_Load_pressed"]

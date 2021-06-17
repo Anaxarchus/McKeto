@@ -1,0 +1,70 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "Ingredient",
+"language": "GDScript",
+"path": "res://Classes/Ingredient.gd"
+}, {
+"base": "Node",
+"class": "Macro",
+"language": "GDScript",
+"path": "res://Classes/Macro.gd"
+}, {
+"base": "Node",
+"class": "MacroArray",
+"language": "GDScript",
+"path": "res://Classes/MacroArray.gd"
+}, {
+"base": "Node",
+"class": "Profile",
+"language": "GDScript",
+"path": "res://Classes/Profile.gd"
+}, {
+"base": "Node",
+"class": "Recipe",
+"language": "GDScript",
+"path": "res://Classes/Recipe.gd"
+} ]
+_global_script_class_icons={
+"Ingredient": "",
+"Macro": "",
+"MacroArray": "",
+"Profile": "",
+"Recipe": ""
+}
+
+[application]
+
+config/name="McCook Book"
+run/main_scene="res://Main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Data="*res://Globals/Data.gd"
+Recipes="*res://Globals/Recipes.gd"
+
+[display]
+
+window/size/width=1600
+window/size/height=800
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"

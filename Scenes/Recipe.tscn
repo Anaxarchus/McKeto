@@ -1,0 +1,235 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Recipe.gd" type="Script" id=1]
+
+[node name="Recipe" type="Control"]
+margin_right = 512.0
+margin_bottom = 304.0
+rect_min_size = Vector2( 0, 300 )
+size_flags_horizontal = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.13585, 0.099, 0.3, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 496.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 4.0
+margin_right = 496.0
+margin_bottom = 288.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 16
+
+[node name="Info" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+margin_right = 153.0
+margin_bottom = 284.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Title" type="Label" parent="VBoxContainer/HBoxContainer2/Info"]
+margin_right = 153.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+text = "Steak Rice Bowl"
+align = 1
+autowrap = true
+
+[node name="Thumbnail" type="TextureRect" parent="VBoxContainer/HBoxContainer2/Info"]
+visible = false
+margin_top = 34.0
+margin_right = 165.0
+margin_bottom = 157.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand = true
+stretch_mode = 6
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer2/Info"]
+margin_top = 60.0
+margin_right = 153.0
+margin_bottom = 284.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2/Info/ScrollContainer"]
+margin_right = 153.0
+margin_bottom = 224.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Calories" type="Label" parent="VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer"]
+margin_right = 153.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Calories: 0g"
+autowrap = true
+
+[node name="Carbs" type="Label" parent="VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 153.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Carbs: 0g"
+autowrap = true
+
+[node name="Fiber" type="Label" parent="VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 153.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Fiber: 0g"
+autowrap = true
+
+[node name="Proteins" type="Label" parent="VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer"]
+margin_top = 54.0
+margin_right = 153.0
+margin_bottom = 68.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Proteins: 0g"
+autowrap = true
+
+[node name="Fats" type="Label" parent="VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer"]
+margin_top = 72.0
+margin_right = 153.0
+margin_bottom = 86.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Fats: 0g"
+autowrap = true
+
+[node name="Sugar" type="Label" parent="VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer"]
+margin_top = 90.0
+margin_right = 153.0
+margin_bottom = 104.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Sugar: 0g"
+autowrap = true
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 169.0
+margin_right = 173.0
+margin_bottom = 284.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 189.0
+margin_right = 496.0
+margin_bottom = 284.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_right = 307.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+scroll_vertical_enabled = false
+
+[node name="Tags" type="HBoxContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer"]
+margin_right = 307.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GF" type="ColorRect" parent="VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer/Tags"]
+visible = false
+margin_right = 80.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 80, 0 )
+color = Color( 0.145098, 0.172549, 0.494118, 1 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer/Tags/GF"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "GF"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="KETO" type="ColorRect" parent="VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer/Tags"]
+visible = false
+margin_right = 80.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 80, 0 )
+color = Color( 0.494118, 0.145098, 0.145098, 1 )
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer/Tags/KETO"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "KETO"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 36.0
+margin_right = 307.0
+margin_bottom = 40.0
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="VBoxContainer/HBoxContainer2/VBoxContainer"]
+margin_top = 44.0
+margin_right = 307.0
+margin_bottom = 284.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="Description" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer2"]
+margin_right = 307.0
+margin_bottom = 240.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+autowrap = true
+
+[node name="DescriptionButton" type="Button" parent="VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer2/Description"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddToCart" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -24.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 24, 24 )
+text = "+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="AddToCart" to="." method="_on_AddToCart_pressed"]

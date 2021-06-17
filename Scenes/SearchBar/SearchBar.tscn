@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/SearchBar/SearchBar.gd" type="Script" id=1]
+
+[node name="SearchBar" type="Control"]
+margin_right = 308.0
+margin_bottom = 32.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LineEdit" type="LineEdit" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+placeholder_text = "Search"
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]

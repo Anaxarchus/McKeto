@@ -19,7 +19,7 @@ func get_recipe_by_id(id:int):
             return recipes[item]
 
 
-func reid_ingredients():
+func sort_ingredients():
     var alphabetical:Dictionary
     var sorted_dict:Dictionary
     var sort:Array
@@ -27,20 +27,15 @@ func reid_ingredients():
         alphabetical[ingredients[item]["title"]] = ingredients[item]
         sort.append(ingredients[item]["title"])
     sort.sort()
-    var id = 0
+    #var id = 0
     for entry in sort:
-        alphabetical[entry].id = id
-        sorted_dict[id] = alphabetical[entry]
-        id += 1
+        #alphabetical[entry].id = id
+        sorted_dict[alphabetical[entry]["id"]] = alphabetical[entry]
+        #id += 1
     ingredients = sorted_dict
-        
-    #var file = File.new()
-    #file.open("user://ingredients.txt", File.WRITE)
-    #file.store_var(ingredients)
-    #file.close()
 
 
-func reid_recipes():
+func sort_recipes():
     var alphabetical:Dictionary
     var sorted_dict:Dictionary
     var sort:Array
@@ -48,11 +43,11 @@ func reid_recipes():
         alphabetical[recipes[item]["title"]] = recipes[item]
         sort.append(recipes[item]["title"])
     sort.sort()
-    var id = 0
+    #var id = 0
     for entry in sort:
-        alphabetical[entry].id = id
-        sorted_dict[id] = alphabetical[entry]
-        id += 1
+        #alphabetical[entry].id = id
+        sorted_dict[alphabetical[entry]["id"]] = alphabetical[entry]
+        #id += 1
     recipes = sorted_dict
         
 
@@ -67,7 +62,7 @@ func load_recipes():
         var text = file.get_as_text()
         var parsed_text = JSON.parse(text)
         recipes = parsed_text.result
-        reid_recipes()
+        sort_recipes()
 
 func load_ingredients():
     var file = File.new()
@@ -79,7 +74,7 @@ func load_ingredients():
         var text = file.get_as_text()
         var parsed_text = JSON.parse(text)
         ingredients = parsed_text.result
-        reid_ingredients()
+        sort_ingredients()
 
 
 func save_recipe(recipe:Recipe):
@@ -92,12 +87,8 @@ func save_recipe(recipe:Recipe):
         "ingredients":recipe.ingredients
        }
     recipes[id] = data
-    reid_recipes()
-    
-    var file = File.new()
-    file.open(home_directory + "/recipes.json", File.WRITE)
-    file.store_string(to_json(recipes))
-    file.close()
+    sort_recipes()
+    save()
         
 
 func save_ingredient(ingred:Ingredient):
@@ -109,19 +100,32 @@ func save_ingredient(ingred:Ingredient):
         "macros":ingred.macros.to_dictionary()
        }
     ingredients[id] = data
-    reid_ingredients()
-    
+    sort_ingredients()
+    save()
+
+
+func save():
     var file = File.new()
+    file.open(home_directory + "/recipes.json", File.WRITE)
+    file.store_string(to_json(recipes))
+    file.close()
+    
     file.open(home_directory + "/ingredients.json", File.WRITE)
     file.store_string(to_json(ingredients))
     file.close()
 
 
 func delete_recipe(id:int):
-    pass
+    for key in recipes.keys():
+        if recipes[key].id == id:
+            recipes.erase(key)
+    save()
 
 func delete_ingredient(id:int):
-    pass
+    for key in ingredients.keys():
+        if ingredients[key].id == id:
+            ingredients.erase(key)
+    save()
 
 
 func get_new_ingredient_id() -> int:

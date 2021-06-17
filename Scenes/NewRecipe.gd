@@ -24,6 +24,11 @@ func set_mode(value:int):
     
     elif value == modes.NEW:
         $VBoxContainer/HBoxContainer/Delete.hide()
+        id = -1
+        self.title = ""
+        self.time_to_cook = 0
+        self.ingredients = []
+        self.instructions = ""
         
 
 func load_recipe(recipe:Recipe):

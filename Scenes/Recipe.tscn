@@ -221,15 +221,36 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AddToCart" type="Button" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -24.0
-margin_bottom = 24.0
+margin_left = -147.0
+margin_bottom = 33.0
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AddToCart" type="Button" parent="HBoxContainer"]
+visible = false
+margin_left = 59.0
+margin_right = 83.0
+margin_bottom = 33.0
 rect_min_size = Vector2( 24, 24 )
 text = "+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="AddToCart" to="." method="_on_AddToCart_pressed"]
+[node name="Edit" type="Button" parent="HBoxContainer"]
+margin_left = 87.0
+margin_right = 147.0
+margin_bottom = 33.0
+rect_min_size = Vector2( 60, 24 )
+text = "Edit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="HBoxContainer/AddToCart" to="." method="_on_AddToCart_pressed"]
+[connection signal="pressed" from="HBoxContainer/Edit" to="." method="_on_Edit_pressed"]

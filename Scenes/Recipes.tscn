@@ -99,3 +99,4 @@ __meta__ = {
 [connection signal="pressed" from="Content/Header/Left/NewRecipe" to="." method="_on_NewRecipe_pressed"]
 [connection signal="creation_canceled" from="New/NewRecipe" to="." method="_on_NewRecipe_creation_canceled"]
 [connection signal="recipe_created" from="New/NewRecipe" to="." method="_on_NewRecipe_recipe_created"]
+[connection signal="recipe_deleted" from="New/NewRecipe" to="." method="_on_NewRecipe_recipe_deleted"]

@@ -4,6 +4,7 @@ extends Control
 var recipe:Recipe setget set_recipe
 var category:int
 signal recipe_selected(recipe)
+signal recipe_edit(recipe)
 
 
 func set_recipe(value:Recipe):
@@ -28,3 +29,7 @@ func set_recipe(value:Recipe):
 
 func _on_AddToCart_pressed():
     emit_signal("recipe_selected", self)
+
+
+func _on_Edit_pressed():
+    emit_signal("recipe_edit", recipe)

@@ -114,7 +114,9 @@ func add_meal_to_breakfast(recipe:Recipe):
     $VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Breakfast/BreakfastItems/Items.add_child(rec)
     rec.recipe = recipe
     rec.category = meals.BREAKFAST
-    rec.get_node("AddToCart").text = "x"
+    rec.get_node("HBoxContainer/AddToCart").text = "x"
+    rec.get_node("HBoxContainer/AddToCart").show()
+    rec.get_node("HBoxContainer/Edit").hide()
     rec.connect("recipe_selected", self, "_on_remove_from_cart")
     update_total_nutrition()
 
@@ -123,7 +125,9 @@ func add_meal_to_lunch(recipe:Recipe):
     $VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Lunch/LunchItems/Items.add_child(rec)
     rec.recipe = recipe
     rec.category = meals.LUNCH
-    rec.get_node("AddToCart").text = "x"
+    rec.get_node("HBoxContainer/AddToCart").text = "x"
+    rec.get_node("HBoxContainer/AddToCart").show()
+    rec.get_node("HBoxContainer/Edit").hide()
     rec.connect("recipe_selected", self, "_on_remove_from_cart")
     update_total_nutrition()
 
@@ -132,7 +136,9 @@ func add_meal_to_dinner(recipe:Recipe):
     $VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Dinner/DinnerItems/Items.add_child(rec)
     rec.recipe = recipe
     rec.category = meals.DINNER
-    rec.get_node("AddToCart").text = "x"
+    rec.get_node("HBoxContainer/AddToCart").text = "x"
+    rec.get_node("HBoxContainer/AddToCart").show()
+    rec.get_node("HBoxContainer/Edit").hide()
     rec.connect("recipe_selected", self, "_on_remove_from_cart")
     update_total_nutrition()
 
@@ -141,7 +147,9 @@ func add_meal_to_snacks(recipe:Recipe):
     $VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/SnackItems/Items.add_child(rec)
     rec.recipe = recipe
     rec.category = meals.SNACKS
-    rec.get_node("AddToCart").text = "x"
+    rec.get_node("HBoxContainer/AddToCart").text = "x"
+    rec.get_node("HBoxContainer/AddToCart").show()
+    rec.get_node("HBoxContainer/Edit").hide()
     rec.connect("recipe_selected", self, "_on_remove_from_cart")
     update_total_nutrition()
 

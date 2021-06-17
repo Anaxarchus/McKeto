@@ -116,6 +116,14 @@ margin_bottom = 784.0
 rect_min_size = Vector2( 0, 32 )
 alignment = 2
 
+[node name="Delete" type="Button" parent="VBoxContainer/HBoxContainer"]
+visible = false
+margin_left = 1196.0
+margin_right = 1376.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 180, 0 )
+text = "Delete Recipe"
+
 [node name="Cancel" type="Button" parent="VBoxContainer/HBoxContainer"]
 margin_left = 1380.0
 margin_right = 1480.0
@@ -138,6 +146,7 @@ margin_right = -128.0
 margin_bottom = -128.0
 
 [connection signal="pressed" from="VBoxContainer/AddIngredient" to="." method="_on_AddIngredient_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Delete" to="." method="_on_Delete_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Cancel" to="." method="_on_Cancel_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Save" to="." method="_on_Save_pressed"]
 [connection signal="ingredient_selected" from="IngredientFinder" to="." method="_on_IngredientFinder_ingredient_selected"]

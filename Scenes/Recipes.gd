@@ -41,6 +41,7 @@ func set_recipes(value:Dictionary):
         card.recipe = recipe
         $Content/ScrollBody/RecipeContainer.add_child(card)
         card.connect("recipe_selected", self, "_on_recipe_add_to_cart")
+        card.connect("recipe_edit", self, "_on_recipe_edit")
         Recipes.recipes.append(recipe)
 
 
@@ -48,7 +49,14 @@ func _on_recipe_add_to_cart(node):
     emit_signal("recipe_selected", node.recipe)
 
 
+func _on_recipe_edit(recipe:Recipe):
+    $New/NewRecipe.mode = $New/NewRecipe.modes.EDIT
+    $New/NewRecipe.load_recipe(recipe)
+    $New.popup_centered()
+
+
 func _on_NewRecipe_pressed():
+    $New/NewRecipe.mode = $New/NewRecipe.modes.NEW
     $New.popup_centered()
 
 
@@ -63,3 +71,8 @@ func _on_NewRecipe_recipe_created():
 
 func _on_Back_pressed():
     emit_signal("back")
+
+
+func _on_NewRecipe_recipe_deleted():
+    $New.hide()
+    self.recipes = Data.recipes

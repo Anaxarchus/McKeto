@@ -3,7 +3,12 @@ extends HBoxContainer
 
 var id:int
 var title:String setget set_title
-var quantity:float setget ,get_quantity
+var quantity:float setget set_quantity,get_quantity
+
+
+func set_quantity(value:float):
+    quantity = value
+    $Quantity.value = value
 
 
 func get_quantity():

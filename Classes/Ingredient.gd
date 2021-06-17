@@ -7,6 +7,7 @@ var id:int
 var description:String
 var thumbnail:ImageTexture
 var macros:Macro
+var tags:Array
 
 var serving_size:float
 var quantity:float

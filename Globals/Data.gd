@@ -3,6 +3,8 @@ extends Node
 
 var ingredients:Dictionary
 var recipes:Dictionary
+onready var home_directory:String = OS.get_executable_path().get_base_dir() # Use on export
+#onready var home_directory:String = "user:/" # Use in editor
 
 
 func get_ingredient_by_id(id:int):
@@ -57,21 +59,27 @@ func reid_recipes():
 
 func load_recipes():
     var file = File.new()
-    var err = file.open("user://recipes.txt", File.READ)
+    var err = file.open(home_directory + "/recipes.json", File.READ)
     if err == ERR_FILE_NOT_FOUND:
         print("no recipes found.")
         return
     else:
-        recipes = file.get_var()
+        var text = file.get_as_text()
+        var parsed_text = JSON.parse(text)
+        recipes = parsed_text.result
+        reid_recipes()
 
 func load_ingredients():
     var file = File.new()
-    var err = file.open("user://ingredients.txt", File.READ)
+    var err = file.open(home_directory + "/ingredients.json", File.READ)
     if err == ERR_FILE_NOT_FOUND:
         print("no ingredients found.")
         return
     else:
-        ingredients = file.get_var()
+        var text = file.get_as_text()
+        var parsed_text = JSON.parse(text)
+        ingredients = parsed_text.result
+        reid_ingredients()
 
 
 func save_recipe(recipe:Recipe):
@@ -87,8 +95,8 @@ func save_recipe(recipe:Recipe):
     reid_recipes()
     
     var file = File.new()
-    file.open("user://recipes.txt", File.WRITE)
-    file.store_var(recipes)
+    file.open(home_directory + "/recipes.json", File.WRITE)
+    file.store_string(to_json(recipes))
     file.close()
         
 
@@ -104,8 +112,8 @@ func save_ingredient(ingred:Ingredient):
     reid_ingredients()
     
     var file = File.new()
-    file.open("user://ingredients.txt", File.WRITE)
-    file.store_var(ingredients)
+    file.open(home_directory + "/ingredients.json", File.WRITE)
+    file.store_string(to_json(ingredients))
     file.close()
 
 

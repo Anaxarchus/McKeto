@@ -67,36 +67,36 @@ func new_profile(profile_name:String):
 
 func load_profile(id:int):
     var file = File.new()
-    var err = file.open("user://Profiles/" + String(id) + ".txt", File.READ)
+    var err = file.open(Data.home_directory + "/Profiles/" + String(id) + ".txt", File.READ)
     if err == OK:
         data = file.get_var()
     file.close()
 
 func save_profile():
     var directory = Directory.new()
-    if not directory.dir_exists("user://Profiles"):
-        directory.make_dir("user://Profiles")
+    if not directory.dir_exists(Data.home_directory + "/Profiles"):
+        directory.make_dir(Data.home_directory + "/Profiles")
     var file = File.new()
-    file.open("user://Profiles/" + String(data.PROFILE.id) + ".txt", File.WRITE)
+    file.open(Data.home_directory + "/Profiles/" + String(data.PROFILE.id) + ".txt", File.WRITE)
     file.store_var(data)
     file.close()
 
 func register_profile():
     var reg = File.new()
-    var err = reg.open("user://Registry.txt",File.READ)
+    var err = reg.open(Data.home_directory + "/Registry.txt",File.READ)
     print(err)
     var current_reg:Dictionary
     if err == OK:
         current_reg = reg.get_var()
     reg.close()
-    err = reg.open("user://Registry.txt",File.WRITE)
+    err = reg.open(Data.home_directory + "/Registry.txt",File.WRITE)
     current_reg[registry.id] = registry
     reg.store_var(current_reg)
     reg.close()
 
 func get_all_profiles():
     var reg = File.new()
-    var err = reg.open("user://Registry.txt",File.READ)
+    var err = reg.open(Data.home_directory + "/Registry.txt",File.READ)
     if err == OK:
         var profiles = reg.get_var()
         reg.close()

@@ -372,7 +372,7 @@ func generate_meal_report():
                 $Shopping/Panel/TextEdit.text += "        " + rec["title"] + "\n"
                 for ing in rec.ingredients:
                     var ingredient = Data.get_ingredient_by_id(ing[0])
-                    $Shopping/Panel/TextEdit.text += "            " + ingredient["title"] + ": " + String(ing[1]) + "g\n\n"
+                    $Shopping/Panel/TextEdit.text += "            " + ingredient["title"] + ": " + String(ing[1]) + "g\n"
         var mac = get_total_nutrition(meals)    
         $Shopping/Panel/TextEdit.text += "\n    Nutrition:\n"
         $Shopping/Panel/TextEdit.text += "        Calories: " + String(mac.calories) + "\n"
@@ -393,7 +393,7 @@ func generate_meal_report():
                 $Shopping/Panel/TextEdit.text += "        " + rec["title"] + "\n"
                 for ing in rec.ingredients:
                     var ingredient = Data.get_ingredient_by_id(ing[0])
-                    $Shopping/Panel/TextEdit.text += "            " + ingredient["title"] + ": " + String(ing[1]) + "g\n\n"
+                    $Shopping/Panel/TextEdit.text += "            " + ingredient["title"] + ": " + String(ing[1]) + "g\n"
         var mac = get_total_nutrition(meals)    
         $Shopping/Panel/TextEdit.text += "\n    Nutrition:\n"
         $Shopping/Panel/TextEdit.text += "        Calories: " + String(mac.calories) + "\n"
@@ -414,7 +414,7 @@ func generate_meal_report():
                 $Shopping/Panel/TextEdit.text += "        " + rec["title"] + "\n"
                 for ing in rec.ingredients:
                     var ingredient = Data.get_ingredient_by_id(ing[0])
-                    $Shopping/Panel/TextEdit.text += "            " + ingredient["title"] + ": " + String(ing[1]) + "g\n\n"
+                    $Shopping/Panel/TextEdit.text += "            " + ingredient["title"] + ": " + String(ing[1]) + "g\n"
         var mac = get_total_nutrition(meals)    
         $Shopping/Panel/TextEdit.text += "\n    Nutrition:\n"
         $Shopping/Panel/TextEdit.text += "        Calories: " + String(mac.calories) + "\n"

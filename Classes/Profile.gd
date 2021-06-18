@@ -5,7 +5,25 @@ extends Node
 var data:Dictionary = {
     "PROFILE":{
         "name":"",
-        "id":0
+        "id":0,
+        "daily_maximums":{
+            "calories":-1,
+            "net_carbs":-1,
+            "carbs":-1,
+            "fiber":-1,
+            "sugar":-1,
+            "protein":-1,
+            "fat":-1,
+           },
+        "daily_minimums":{
+            "calories":-1,
+            "net_carbs":-1,
+            "carbs":-1,
+            "fiber":-1,
+            "sugar":-1,
+            "protein":-1,
+            "fat":-1,
+           },
        },
     "SUNDAY":{
         "breakfast":[],

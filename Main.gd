@@ -123,6 +123,7 @@ func _on_Load_pressed():
     $MealPlan.load_from_dict(profile.data)
     $Menu/Line3.hide()
     $LogIn.hide()
+    #$Menu/Line5.show()
 
 
 func _on_Guest_pressed():
@@ -152,3 +153,7 @@ func _on_MealPlan_day_cleared(day):
        }
     profile.save_profile()
     $MealPlan.load_from_dict(profile.data)
+
+
+func _on_Settings_pressed():
+    $Settings.popup_centered()

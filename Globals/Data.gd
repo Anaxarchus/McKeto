@@ -93,7 +93,6 @@ func save_recipe(recipe:Recipe):
             found_dupe = true
     if not found_dupe:
         recipes[id] = data
-    print(recipes)
     sort_recipes()
     save()
         
@@ -139,19 +138,27 @@ func delete_ingredient(id:int):
 
 func get_new_ingredient_id() -> int:
     var new_id:int = 0
-    for ing in ingredients.keys():
-        if not ingredients[ing]["id"] == new_id:
-            return new_id
-        else:
+    var ids:Array
+    for rec in ingredients.keys():
+        ids.append(int(ingredients[rec]["id"]))
+    var valid_id = false
+    while not valid_id:
+        if ids.has(new_id):
             new_id += 1
+        else:
+            valid_id = true
     return new_id
 
 func get_new_recipe_id() -> int:
     var new_id:int = 0
+    var ids:Array
     for rec in recipes.keys():
-        if not recipes[rec]["id"] == new_id:
-            return new_id
-        else:
+        ids.append(int(recipes[rec]["id"]))
+    var valid_id = false
+    while not valid_id:
+        if ids.has(new_id):
             new_id += 1
+        else:
+            valid_id = true
     return new_id
     

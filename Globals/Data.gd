@@ -86,7 +86,14 @@ func save_recipe(recipe:Recipe):
         "time_to_cook":recipe.time_to_cook,
         "ingredients":recipe.ingredients
        }
-    recipes[id] = data
+    var found_dupe = false
+    for key in recipes.keys():
+        if recipes[key].id == id:
+            recipes[key] = data
+            found_dupe = true
+    if not found_dupe:
+        recipes[id] = data
+    print(recipes)
     sort_recipes()
     save()
         

@@ -100,40 +100,40 @@ size_flags_vertical = 1
 text = "Calories: 0g"
 autowrap = true
 
-[node name="Carbs" type="Label" parent="VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer"]
+[node name="Proteins" type="Label" parent="VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer"]
 margin_top = 18.0
 margin_right = 153.0
 margin_bottom = 32.0
-size_flags_horizontal = 3
-size_flags_vertical = 1
-text = "Carbs: 0g"
-autowrap = true
-
-[node name="Fiber" type="Label" parent="VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer"]
-margin_top = 36.0
-margin_right = 153.0
-margin_bottom = 50.0
-size_flags_horizontal = 3
-size_flags_vertical = 1
-text = "Fiber: 0g"
-autowrap = true
-
-[node name="Proteins" type="Label" parent="VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer"]
-margin_top = 54.0
-margin_right = 153.0
-margin_bottom = 68.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "Proteins: 0g"
 autowrap = true
 
 [node name="Fats" type="Label" parent="VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 153.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Fats: 0g"
+autowrap = true
+
+[node name="Carbs" type="Label" parent="VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer"]
+margin_top = 54.0
+margin_right = 153.0
+margin_bottom = 68.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Carbs: 0g"
+autowrap = true
+
+[node name="Fiber" type="Label" parent="VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer"]
 margin_top = 72.0
 margin_right = 153.0
 margin_bottom = 86.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Fats: 0g"
+text = "Fiber: 0g"
 autowrap = true
 
 [node name="Sugar" type="Label" parent="VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer"]

@@ -14,8 +14,8 @@ func set_recipe(value:Recipe):
     $VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer/Carbs.text = "Carbs: " + String(value.sum_carbs/100) + "g"
     $VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer/Proteins.text = "Proteins: " + String(value.sum_protein/100) + "g"
     $VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer/Fats.text = "Fats: " + String(value.sum_fat/100) + "g"
-    $VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer/Fiber.text = "Fiber: " + String(value.sum_fiber/100) + "g"
-    $VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer/Sugar.text = "Sugar: " + String(value.sum_sugar/100) + "g"
+    $VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer/Fiber.text = "      Fiber: " + String(value.sum_fiber/100) + "g"
+    $VBoxContainer/HBoxContainer2/Info/ScrollContainer/VBoxContainer/Sugar.text = "      Sugar: " + String(value.sum_sugar/100) + "g"
     
     $VBoxContainer/HBoxContainer2/Info/Title.text = value.title
     $VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer2/Description.text = "Ingredients:" + "\n"

@@ -173,7 +173,7 @@ custom_constants/separation = 40
 
 [node name="Breakfast" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals"]
 margin_right = 1042.0
-margin_bottom = 46.0
+margin_bottom = 66.0
 custom_constants/separation = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Breakfast"]
@@ -195,23 +195,24 @@ size_flags_vertical = 3
 [node name="BreakfastItems" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Breakfast"]
 margin_top = 22.0
 margin_right = 1042.0
-margin_bottom = 46.0
+margin_bottom = 66.0
 
 [node name="AddBreakfast" type="Button" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Breakfast/BreakfastItems"]
 margin_right = 1042.0
-margin_bottom = 20.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
 text = "Add Item"
 
 [node name="Items" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Breakfast/BreakfastItems"]
-margin_top = 24.0
+margin_top = 44.0
 margin_right = 1042.0
-margin_bottom = 24.0
+margin_bottom = 44.0
 custom_constants/separation = 20
 
 [node name="Lunch" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals"]
-margin_top = 86.0
+margin_top = 106.0
 margin_right = 1042.0
-margin_bottom = 132.0
+margin_bottom = 172.0
 custom_constants/separation = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Lunch"]
@@ -233,23 +234,24 @@ size_flags_vertical = 3
 [node name="LunchItems" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Lunch"]
 margin_top = 22.0
 margin_right = 1042.0
-margin_bottom = 46.0
+margin_bottom = 66.0
 
 [node name="AddLunch" type="Button" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Lunch/LunchItems"]
 margin_right = 1042.0
-margin_bottom = 20.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
 text = "Add Item"
 
 [node name="Items" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Lunch/LunchItems"]
-margin_top = 24.0
+margin_top = 44.0
 margin_right = 1042.0
-margin_bottom = 24.0
+margin_bottom = 44.0
 custom_constants/separation = 20
 
 [node name="Dinner" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals"]
-margin_top = 172.0
+margin_top = 212.0
 margin_right = 1042.0
-margin_bottom = 218.0
+margin_bottom = 278.0
 custom_constants/separation = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Dinner"]
@@ -271,17 +273,18 @@ size_flags_vertical = 3
 [node name="DinnerItems" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Dinner"]
 margin_top = 22.0
 margin_right = 1042.0
-margin_bottom = 46.0
+margin_bottom = 66.0
 
 [node name="AddDinner" type="Button" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Dinner/DinnerItems"]
 margin_right = 1042.0
-margin_bottom = 20.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
 text = "Add Item"
 
 [node name="Items" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Meals/Dinner/DinnerItems"]
-margin_top = 24.0
+margin_top = 44.0
 margin_right = 1042.0
-margin_bottom = 24.0
+margin_bottom = 44.0
 custom_constants/separation = 20
 
 [node name="Snacks" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody"]
@@ -367,7 +370,7 @@ text = "Sugar: 0"
 [node name="SnackItems" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks"]
 margin_top = 144.0
 margin_right = 522.0
-margin_bottom = 218.0
+margin_bottom = 238.0
 custom_constants/separation = 20
 
 [node name="DinnerItems2" type="HBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/SnackItems"]
@@ -389,13 +392,14 @@ size_flags_vertical = 3
 [node name="AddSnack" type="Button" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/SnackItems"]
 margin_top = 34.0
 margin_right = 522.0
-margin_bottom = 54.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 0, 40 )
 text = "Add Item"
 
 [node name="Items" type="VBoxContainer" parent="VBoxContainer/MealScroll/MealContainer/FoodBody/Snacks/SnackItems"]
-margin_top = 74.0
+margin_top = 94.0
 margin_right = 522.0
-margin_bottom = 74.0
+margin_bottom = 94.0
 custom_constants/separation = 20
 
 [node name="Shopping" type="Popup" parent="."]

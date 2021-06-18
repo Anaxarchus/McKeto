@@ -17,7 +17,7 @@ __meta__ = {
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.181133, 0.132, 0.4, 1 )
+color = Color( 0.0901961, 0.0666667, 0.2, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -33,24 +33,24 @@ __meta__ = {
 }
 
 [node name="Line1" type="HBoxContainer" parent="Menu"]
-margin_top = 336.0
+margin_top = 304.0
 margin_right = 1600.0
-margin_bottom = 368.0
+margin_bottom = 352.0
 rect_min_size = Vector2( 0, 32 )
 alignment = 1
 
 [node name="Recipes" type="Button" parent="Menu/Line1"]
 margin_left = 620.0
 margin_right = 980.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 360, 0 )
+margin_bottom = 48.0
+rect_min_size = Vector2( 360, 48 )
 focus_mode = 0
 mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 text = "Recipes"
 
 [node name="Line2" type="HBoxContainer" parent="Menu"]
-margin_top = 368.0
+margin_top = 352.0
 margin_right = 1600.0
 margin_bottom = 400.0
 rect_min_size = Vector2( 0, 32 )
@@ -59,8 +59,8 @@ alignment = 1
 [node name="MyMenu" type="Button" parent="Menu/Line2"]
 margin_left = 620.0
 margin_right = 980.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 360, 0 )
+margin_bottom = 48.0
+rect_min_size = Vector2( 360, 48 )
 focus_mode = 0
 mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
@@ -69,32 +69,32 @@ text = "Menu"
 [node name="Line3" type="HBoxContainer" parent="Menu"]
 margin_top = 400.0
 margin_right = 1600.0
-margin_bottom = 432.0
+margin_bottom = 448.0
 rect_min_size = Vector2( 0, 32 )
 alignment = 1
 
 [node name="LogIn" type="Button" parent="Menu/Line3"]
 margin_left = 620.0
 margin_right = 980.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 360, 0 )
+margin_bottom = 48.0
+rect_min_size = Vector2( 360, 48 )
 focus_mode = 0
 mouse_default_cursor_shape = 2
 enabled_focus_mode = 0
 text = "Log In"
 
 [node name="Line4" type="HBoxContainer" parent="Menu"]
-margin_top = 432.0
+margin_top = 448.0
 margin_right = 1600.0
-margin_bottom = 464.0
+margin_bottom = 496.0
 rect_min_size = Vector2( 0, 32 )
 alignment = 1
 
 [node name="Exit" type="Button" parent="Menu/Line4"]
 margin_left = 620.0
 margin_right = 980.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 360, 0 )
+margin_bottom = 48.0
+rect_min_size = Vector2( 360, 48 )
 focus_mode = 0
 mouse_default_cursor_shape = 2
 enabled_focus_mode = 0

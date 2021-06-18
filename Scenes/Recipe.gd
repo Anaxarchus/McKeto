@@ -3,6 +3,7 @@ extends Control
 
 var recipe:Recipe setget set_recipe
 var category:int
+var tags:Array
 signal recipe_selected(recipe)
 signal recipe_edit(recipe)
 
@@ -22,6 +23,25 @@ func set_recipe(value:Recipe):
         $VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer2/Description.text += ingred.title + ": " + String(ingred.quantity) + "g\n"
     $VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer2/Description.text += "\n" + "Description:"
     $VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer2/Description.text += "\n" + value.description
+    
+    tags = recipe.get_tags()
+    if tags[recipe.tags.GLUTEN_FREE]:
+        $VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer/Tags/GF.show()
+    else:
+        $VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer/Tags/GF.hide()
+    if tags[recipe.tags.KETOGENIC]:
+        $VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer/Tags/KETO.show()
+    else:
+        $VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer/Tags/KETO.hide()
+    if tags[recipe.tags.VEGETARIAN]:
+        $VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer/Tags/VEG.show()
+    else:
+        $VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer/Tags/VEG.hide()
+    if tags[recipe.tags.PESCATARIAN]:
+        $VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer/Tags/PESC.show()
+    else:
+        $VBoxContainer/HBoxContainer2/VBoxContainer/ScrollContainer/Tags/PESC.hide()
+        
     
     #$VBoxContainer/HBoxContainer2/VBoxContainer/Description.wrap_enabled = false
     #$VBoxContainer/HBoxContainer2/VBoxContainer/Description.wrap_enabled = true

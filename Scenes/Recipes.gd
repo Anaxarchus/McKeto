@@ -4,6 +4,13 @@ extends Control
 var recipe_card = preload("res://Scenes/Recipe.tscn")
 var recipes:Dictionary setget set_recipes
 
+var filters:Dictionary = {
+    "GF":false,
+    "KETO":false,
+    "VEG":false,
+    "PESC":false
+   }
+
 signal recipe_selected(recipe)
 signal back
 
@@ -11,6 +18,24 @@ signal back
 # Called when the node enters the scene tree for the first time.
 func _ready():
     pass
+
+
+func update_filter():
+    for recipe in $Content/ScrollBody/RecipeContainer.get_children():
+        recipe.show()
+    for recipe in $Content/ScrollBody/RecipeContainer.get_children():
+        if filters.GF:
+            if not recipe.tags[Recipe.tags.GLUTEN_FREE]:
+                recipe.hide()
+        if filters.KETO:
+            if not recipe.tags[Recipe.tags.KETOGENIC]:
+                recipe.hide()
+        if filters.VEG:
+            if not recipe.tags[Recipe.tags.VEGETARIAN]:
+                recipe.hide()
+        if filters.PESC:
+            if not recipe.tags[Recipe.tags.PESCATARIAN]:
+                recipe.hide()
 
 
 func set_recipes(value:Dictionary):
@@ -33,6 +58,8 @@ func set_recipes(value:Dictionary):
             ing.title = ing_data["title"]
             ing.id = ing_data["id"]
             ing.quantity = ingred[1]
+            ing.gluten_free = ing_data["gluten_free"]
+            ing.type = ing_data["type"]
             var mac = Macro.new()
             mac.from_dictionary(ing_data["macros"])
             ing.macros = mac
@@ -76,3 +103,23 @@ func _on_Back_pressed():
 func _on_NewRecipe_recipe_deleted():
     $New.hide()
     self.recipes = Data.recipes
+
+
+func _on_GF_toggled(button_pressed):
+    filters.GF = button_pressed
+    update_filter()
+
+
+func _on_Keto_toggled(button_pressed):
+    filters.KETO = button_pressed
+    update_filter()
+
+
+func _on_Veg_toggled(button_pressed):
+    filters.VEG = button_pressed
+    update_filter()
+
+
+func _on_Pesc_toggled(button_pressed):
+    filters.PESC = button_pressed
+    update_filter()

@@ -11,6 +11,7 @@ func show_ingredients():
     for ing in Data.ingredients.keys():
         var ing_plac = ingredient_placard.instance()
         ing_plac.connect("selected", self, "_on_ingredient_selected")
+        ing_plac.connect("edit",self,"_on_ingredient_edit")
         ing_plac.id = Data.ingredients[ing]["id"]
         ing_plac.title = Data.ingredients[ing]["title"]
         $Search/ScrollContainer/ings.add_child(ing_plac)
@@ -44,6 +45,14 @@ func _on_ingredient_selected(id:int):
     clear_list()
 
 
+func _on_ingredient_edit(id:int):
+    var ing = Ingredient.new()
+    ing.from_dict(Data.get_ingredient_by_id(id))
+    $Add.load_ingredient(ing)
+    $Add.show()
+    $Search.hide()
+
+
 func _on_Button_pressed():
     self.hide()
     $Search/SearchBar.clear()
@@ -54,6 +63,7 @@ func _on_Button_pressed():
 func _on_AddIng_pressed():
     $Add.show()
     $Search.hide()
+    $Add.clear()
 
 
 func _on_Add_Cancel_pressed():

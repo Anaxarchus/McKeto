@@ -2,15 +2,32 @@
 
 [ext_resource path="res://Scenes/IngredientSelect.gd" type="Script" id=1]
 
-[node name="IngredientSelect" type="Button"]
-margin_right = 1024.0
+[node name="IngredientSelect" type="HBoxContainer"]
+anchor_right = 1.0
 margin_bottom = 32.0
-rect_min_size = Vector2( 0, 32 )
-text = "Ingredient"
-align = 0
+rect_min_size = Vector2( 0, 40 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="." to="." method="_on_IngredientSelect_pressed"]
+[node name="IngredientSelect" type="Button" parent="."]
+margin_right = 1516.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+text = "Ingredient"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Edit" type="Button" parent="."]
+margin_left = 1520.0
+margin_right = 1600.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 0 )
+text = "Edit"
+
+[connection signal="pressed" from="IngredientSelect" to="." method="_on_IngredientSelect_pressed"]
+[connection signal="pressed" from="Edit" to="." method="_on_Edit_pressed"]

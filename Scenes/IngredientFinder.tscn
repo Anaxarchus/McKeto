@@ -31,17 +31,17 @@ __meta__ = {
 
 [node name="SearchBar" parent="Search" instance=ExtResource( 1 )]
 margin_right = 1584.0
-rect_min_size = Vector2( 0, 32 )
+margin_bottom = 48.0
 
 [node name="AddIng" type="Button" parent="Search"]
-margin_top = 36.0
+margin_top = 52.0
 margin_right = 1584.0
-margin_bottom = 68.0
-rect_min_size = Vector2( 0, 32 )
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 48 )
 text = "Add Ingredient"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Search"]
-margin_top = 72.0
+margin_top = 104.0
 margin_right = 1584.0
 margin_bottom = 824.0
 size_flags_horizontal = 3
@@ -53,7 +53,7 @@ __meta__ = {
 
 [node name="ings" type="VBoxContainer" parent="Search/ScrollContainer"]
 margin_right = 1584.0
-margin_bottom = 752.0
+margin_bottom = 720.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -104,130 +104,184 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="GridContainer" type="VBoxContainer" parent="Add/ScrollContainer"]
-margin_left = 725.0
-margin_top = 289.0
-margin_right = 858.0
-margin_bottom = 453.0
+margin_left = 673.0
+margin_top = 197.0
+margin_right = 911.0
+margin_bottom = 545.0
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Add/ScrollContainer/GridContainer"]
-margin_right = 133.0
-margin_bottom = 24.0
+[node name="HBoxContainer7" type="HBoxContainer" parent="Add/ScrollContainer/GridContainer"]
+margin_right = 238.0
+margin_bottom = 40.0
 size_flags_horizontal = 3
 
+[node name="Label" type="Label" parent="Add/ScrollContainer/GridContainer/HBoxContainer7"]
+margin_top = 13.0
+margin_right = 34.0
+margin_bottom = 27.0
+text = "Type:"
+
+[node name="Type" type="OptionButton" parent="Add/ScrollContainer/GridContainer/HBoxContainer7"]
+margin_left = 38.0
+margin_right = 238.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 40 )
+text = "Other"
+align = 1
+items = [ "Beef", null, false, 0, null, "Pork", null, false, 1, null, "Chicken", null, false, 2, null, "Fish", null, false, 3, null, "Fruit", null, false, 4, null, "Vegetable", null, false, 5, null, "Dairy", null, false, 6, null, "Condiment", null, false, 7, null, "Prepackaged", null, false, 8, null, "Other", null, false, 9, null ]
+selected = 9
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Add/ScrollContainer/GridContainer"]
+margin_top = 44.0
+margin_right = 238.0
+margin_bottom = 84.0
+size_flags_horizontal = 3
+alignment = 2
+
 [node name="Label" type="Label" parent="Add/ScrollContainer/GridContainer/HBoxContainer"]
-margin_top = 5.0
-margin_right = 55.0
-margin_bottom = 19.0
+margin_right = 114.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Calories:"
+valign = 1
 
 [node name="Calories" type="SpinBox" parent="Add/ScrollContainer/GridContainer/HBoxContainer"]
-margin_left = 59.0
-margin_right = 133.0
-margin_bottom = 24.0
+margin_left = 118.0
+margin_right = 238.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 40 )
 max_value = 9999.0
 step = 0.001
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Add/ScrollContainer/GridContainer"]
-margin_top = 28.0
-margin_right = 133.0
-margin_bottom = 52.0
+margin_top = 88.0
+margin_right = 238.0
+margin_bottom = 128.0
 size_flags_horizontal = 3
+alignment = 2
 
 [node name="Label" type="Label" parent="Add/ScrollContainer/GridContainer/HBoxContainer2"]
-margin_top = 5.0
-margin_right = 39.0
-margin_bottom = 19.0
+margin_right = 114.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Carbs:"
+valign = 1
 
 [node name="Carbs" type="SpinBox" parent="Add/ScrollContainer/GridContainer/HBoxContainer2"]
-margin_left = 43.0
-margin_right = 117.0
-margin_bottom = 24.0
+margin_left = 118.0
+margin_right = 238.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 40 )
 max_value = 9999.0
 step = 0.001
 suffix = "g"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Add/ScrollContainer/GridContainer"]
-margin_top = 56.0
-margin_right = 133.0
-margin_bottom = 80.0
+margin_top = 132.0
+margin_right = 238.0
+margin_bottom = 172.0
 size_flags_horizontal = 3
+alignment = 2
 
 [node name="Label" type="Label" parent="Add/ScrollContainer/GridContainer/HBoxContainer3"]
-margin_top = 5.0
-margin_right = 50.0
-margin_bottom = 19.0
+margin_right = 114.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Protein:"
+valign = 1
 
 [node name="Proteins" type="SpinBox" parent="Add/ScrollContainer/GridContainer/HBoxContainer3"]
-margin_left = 54.0
-margin_right = 128.0
-margin_bottom = 24.0
+margin_left = 118.0
+margin_right = 238.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 40 )
 max_value = 9999.0
 step = 0.001
 suffix = "g"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Add/ScrollContainer/GridContainer"]
-margin_top = 84.0
-margin_right = 133.0
-margin_bottom = 108.0
+margin_top = 176.0
+margin_right = 238.0
+margin_bottom = 216.0
 size_flags_horizontal = 3
+alignment = 2
 
 [node name="Label" type="Label" parent="Add/ScrollContainer/GridContainer/HBoxContainer4"]
-margin_top = 5.0
-margin_right = 23.0
-margin_bottom = 19.0
+margin_right = 114.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Fat:"
+valign = 1
 
 [node name="Fats" type="SpinBox" parent="Add/ScrollContainer/GridContainer/HBoxContainer4"]
-margin_left = 27.0
-margin_right = 101.0
-margin_bottom = 24.0
+margin_left = 118.0
+margin_right = 238.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 40 )
 max_value = 9999.0
 step = 0.001
 suffix = "g"
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="Add/ScrollContainer/GridContainer"]
-margin_top = 112.0
-margin_right = 133.0
-margin_bottom = 136.0
+margin_top = 220.0
+margin_right = 238.0
+margin_bottom = 260.0
 size_flags_horizontal = 3
+alignment = 2
 
 [node name="Label" type="Label" parent="Add/ScrollContainer/GridContainer/HBoxContainer5"]
-margin_top = 5.0
-margin_right = 36.0
-margin_bottom = 19.0
+margin_right = 114.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Fiber:"
+valign = 1
 
 [node name="Fiber" type="SpinBox" parent="Add/ScrollContainer/GridContainer/HBoxContainer5"]
-margin_left = 40.0
-margin_right = 114.0
-margin_bottom = 24.0
+margin_left = 118.0
+margin_right = 238.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 40 )
 max_value = 9999.0
 step = 0.001
 suffix = "g"
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="Add/ScrollContainer/GridContainer"]
-margin_top = 140.0
-margin_right = 133.0
-margin_bottom = 164.0
+margin_top = 264.0
+margin_right = 238.0
+margin_bottom = 304.0
 size_flags_horizontal = 3
+alignment = 2
 
 [node name="Label" type="Label" parent="Add/ScrollContainer/GridContainer/HBoxContainer6"]
-margin_top = 5.0
-margin_right = 38.0
-margin_bottom = 19.0
+margin_right = 114.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "Sugar:"
+valign = 1
 
 [node name="Sugar" type="SpinBox" parent="Add/ScrollContainer/GridContainer/HBoxContainer6"]
-margin_left = 42.0
-margin_right = 116.0
-margin_bottom = 24.0
+margin_left = 118.0
+margin_right = 238.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 40 )
 max_value = 9999.0
 step = 0.001
 suffix = "g"
+
+[node name="GlutenFree" type="CheckBox" parent="Add/ScrollContainer/GridContainer"]
+margin_top = 308.0
+margin_right = 238.0
+margin_bottom = 348.0
+rect_min_size = Vector2( 0, 40 )
+text = "Gluten Free"
+align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Add"]
 margin_top = 792.0

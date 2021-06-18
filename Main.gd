@@ -62,7 +62,8 @@ func _on_Recipes_recipe_selected(recipe):
                 profile.data[$MealPlan.days.keys()[$MealPlan.selected_day]].snacks = $MealPlan.get_day().snacks
         $MealPlan.show()
         $Recipes.hide()
-        profile.save_profile()
+        if profile_loaded:
+            profile.save_profile()
         selecting_meal = false
         
 

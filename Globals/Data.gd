@@ -3,8 +3,8 @@ extends Node
 
 var ingredients:Dictionary
 var recipes:Dictionary
-#onready var home_directory:String = OS.get_executable_path().get_base_dir() # Use on export
-onready var home_directory:String = "user:/" # Use in editor
+onready var home_directory:String = OS.get_executable_path().get_base_dir() # Use on export
+#onready var home_directory:String = "user:/" # Use in editor
 
 
 func get_ingredient_by_id(id:int):

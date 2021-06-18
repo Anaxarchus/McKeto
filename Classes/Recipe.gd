@@ -32,7 +32,7 @@ func get_tags() -> Array:
         if ing.gluten_free == false:
             print(ing.title, " is not gluten free")
             gf = false
-    if get_net_carbs() > 15.0:
+    if get_net_carbs()/100 > 15.0:
         keto = false
     return [gf,keto,veg,pesc]
 
@@ -40,7 +40,7 @@ func get_tags() -> Array:
 func get_net_carbs():
     var sum:float
     for ing in ingredients:
-        sum += (ing.macros.carbs - ing.macros.fiber)
+        sum += (ing.macros.carbs - ing.macros.fiber)*ing.quantity
     return sum
 
 func get_sum_calories():

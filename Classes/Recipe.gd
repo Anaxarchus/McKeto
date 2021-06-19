@@ -9,6 +9,7 @@ var description:String
 var thumbnail:ImageTexture
 var time_to_cook:int
 var ingredients:Array
+var servings:float
 
 var sum_calories:float setget ,get_sum_calories
 var sum_carbs:float setget ,get_sum_carbs

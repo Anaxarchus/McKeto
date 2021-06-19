@@ -42,22 +42,22 @@ func _on_Recipes_recipe_selected(recipe):
     if selecting_meal:
         if selecting == meals.BREAKFAST:
             $MealPlan.add_meal_to_breakfast(recipe)
-            $MealPlan.get_day().breakfast.append(recipe.id)
+            $MealPlan.get_day().breakfast.append({"id":recipe.id,"servings":1})
             if profile_loaded:
                 profile.data[$MealPlan.days.keys()[$MealPlan.selected_day]].breakfast = $MealPlan.get_day().breakfast
         elif selecting == meals.LUNCH:
             $MealPlan.add_meal_to_lunch(recipe)
-            $MealPlan.get_day().lunch.append(recipe.id)
+            $MealPlan.get_day().lunch.append({"id":recipe.id,"servings":1})
             if profile_loaded:
                 profile.data[$MealPlan.days.keys()[$MealPlan.selected_day]].lunch = $MealPlan.get_day().lunch
         elif selecting == meals.DINNER:
             $MealPlan.add_meal_to_dinner(recipe)
-            $MealPlan.get_day().dinner.append(recipe.id)
+            $MealPlan.get_day().dinner.append({"id":recipe.id,"servings":1})
             if profile_loaded:
                 profile.data[$MealPlan.days.keys()[$MealPlan.selected_day]].dinner = $MealPlan.get_day().dinner
         elif selecting == meals.SNACKS:
             $MealPlan.add_meal_to_snacks(recipe)
-            $MealPlan.get_day().snacks.append(recipe.id)
+            $MealPlan.get_day().snacks.append({"id":recipe.id,"servings":1})
             if profile_loaded:
                 profile.data[$MealPlan.days.keys()[$MealPlan.selected_day]].snacks = $MealPlan.get_day().snacks
         $MealPlan.show()
